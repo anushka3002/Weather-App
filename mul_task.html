@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Constructor</title>
+    <style>
+        body{
+            display: flex;
+            width:100%;
+            background-size: 100%;
+            background-image: url("https://cdn.nerdschalk.com/wp-content/uploads/2020/10/among-us-space-background-13.png?width=800");
+        }
+        #container{
+            margin-left:10%;
+            width:40%;
+            border-radius: 7px;
+            height:550px;
+            color:white;
+            border:1px solid black;
+            background-size:100% 550px;
+            background-repeat: no-repeat;
+            background-image:url("https://wallpaperbat.com/img/237770-angie-crepe-knit-coordinating-solid-burgundy-solid-color.jpg")
+        }
+        #todo{
+            width:30%;
+            height:90px;
+            margin-left:2%;
+        }
+        #countT{
+            width:40%;
+            height:90px;
+            margin-left: 40%;
+            margin-right: 2%;
+            display:flex;
+            justify-content: space-between;
+            
+        }
+        #flexIt{
+            display: flex;
+        }
+        #line{
+            width:100%;
+            background-color: pink;
+            height:2px;
+        }
+        .inputwriter{
+            width:30%;
+            height:400px;
+            margin-left:10%;
+            background-size: width="50px";
+            margin-top:5%;
+            border-radius: 10px;
+            background-image: url("https://media.istockphoto.com/photos/happy-santa-claus-pointing-in-blank-white-advertisement-banner-picture-id1279820415?b=1&k=20&m=1279820415&s=170667a&w=0&h=rpIIChUjgWV7QH_YVoIt8MUfYbFVXQfKLlFi3-kC2Nk=");
+        }
+        .inputwriter:hover{
+            border-color:maroon ;
+            box-shadow: 0 0 30px #fa3d66;
+        }
+        input{
+            width:50%;
+            height:30px;
+            border-radius:5px;
+            background-color:rgb(53, 46, 46);
+            color:white;
+    
+        }
+        input:hover{
+            border-color:maroon ;
+            box-shadow: 0 0 15px #fa3d66;
+        }
+        #smallbox{
+            width:100%;
+            height:300px;
+            margin-top: 230px;
+            text-align: center;
+            
+        }
+        th, td {
+            width:100px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+        #inputtask{
+            font-weight: 800;
+        }
+        #buttonS{
+            margin-top:10px;
+            width:70px;
+            background-color: brown;
+        }
+        #buttonS:hover{
+            border-color:maroon ;
+            box-shadow: 0 0 15px #fa3d66;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="inputwriter">
+        <div id="smallbox">
+        <form id="form">
+           <div> <label id="inputtask">Task</label></div>
+        <input id="task" type="text" value="">
+        <div><label id="inputtask">Date</label></div>
+        <input id="dateInput" type="date" value="">
+        <div><input id="buttonS" type="submit" value="Submit"></div>
+    </form>
+</div>
+    </div>
+    <div id="container">
+        <div id="flexIt">
+        <div id="todo">
+             <h2>Todo List</h2>
+        </div>
+        <div id="countT">
+            <h2>Task count</h2>
+            <h2 id="count"></h2>
+        </div>
+    </div>
+    <div id="line"></div>
+    <table>
+        <thead>
+            <tr>
+                <th>Task</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Mark</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+         <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>
+<script>
+    var all=JSON.parse(localStorage.getItem("list")) || [];
+    display(all);
+    document.querySelector("#form").addEventListener("submit",function(elem){
+        elem.preventDefault();
+        var task=document.querySelector("#task").value;
+        var date=document.querySelector("#dateInput").value;
+        let status="False";
+
+        let obj=new myobj(task,date,status)
+
+        function myobj(task,date,status)
+        {
+            this.name=task,
+            this.date=date,
+            this.status=status
+        }
+        all.push(obj);
+        localStorage.setItem("list",JSON.stringify(all));
+
+        display(all);
+    });
+
+    function display(all)
+    {
+        document.querySelector("tbody").innerHTML=""
+        all.map(function(elem,index){
+            document.querySelector("#count").textContent=index+1;
+            var row=document.createElement("tr");
+            var td1=document.createElement("td");
+            td1.textContent=elem.name;
+            var td2=document.createElement("td");
+            td2.textContent=elem.date;
+            var td3=document.createElement("td");
+            td3.textContent=elem.status;
+            
+            
+            function toggleTask(td3){
+                td3.addEventListener('click',function(){
+                    td3.textContent="True";
+            })
+            }
+            toggleTask(td3)
+            var td4=document.createElement("td");
+            td4.textContent="Done";
+            td4.addEventListener('click',function(){
+                row.style.backgroundColor="green"
+                row.style.color="white"
+                td1.style.textDecoration="line-through"
+            })
+            var td5=document.createElement("button");
+            td5.addEventListener('click',function(){
+                deleteRow(index)
+            })
+            td5.textContent="delete";
+            td5.style.backgroundColor="black";
+            td5.style.color="white";
+            td5.style.padding="10px";
+            td5.style.borderRadius="5px"  
+            td5.style.marginLeft="30px";
+            td5.style.marginTop="15px";
+            row.append(td1,td2,td3,td4,td5)
+            document.querySelector("tbody").append((row));
+        });
+        function deleteRow(index){
+            all.splice(index,1)
+            localStorage.setItem("list",JSON.stringify(all));
+            display(all);
+        }
+    }
+    
+</script>
