@@ -4,95 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="weather.css">
+    <link rel="stylesheet" href="weather1.css">
     <title>Weather Report</title>
-    <style>
-        body {
-            height:570px;
-            animation: fadeInAnimation ease 3s;
-            animation-iteration-count: 1;
-            animation-fill-mode: forwards;
-            background-size: 100% 600px;
-            /* background-color:rgb(104, 150, 235); */
-            background-image: url("https://wallpapercave.com/wp/xpbJv4U.jpg");
-        }
-
-        @keyframes fadeInAnimation {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        .cont{
-            border:1px solid rgb(151, 148, 148);
-            border-radius: 5px;
-            width:25%;
-            height:100px;
-            background: rgba(255, 255, 255, 0.438); 
-            backdrop-filter: blur(15px); 
-            line-height: 15px;
-            transition: width 2s, height 2s, background-color 2s, transform 2s;
-            padding-left: 5px;
-        }
-        #city{
-            /* border-radius:5px; */
-            height:30px;
-            width:70%;
-            border:1px solid rgb(102, 99, 99);
-            background-color: rgb(249, 249, 250);
-            /* transition: transform .6s; */
-        }
-        /* #name:hover{ */
-            /* transform: scale(1.2) */
-        /* } */
-        #button{
-            height:34px;
-            width:20%;
-            border:1px solid rgb(102, 99, 99);
-            background-color: rgb(251, 252, 253);
-        }
-        #head{
-            text-align: center;
-            font-size: 35px;
-            background-color: rgb(255, 255, 255);
-            width:30%;
-            border-radius: 5px;
-            margin: auto;
-            margin-top: 5%;
-        }
-        #bigcont{
-            display: flex;
-        }
-        
-    </style>
+    
 </head>
 <body>
     <div id="bigcont">
+        <div id="left">
     <div class="cont">
         <div><h2>Welcome! To Weather Report</h2></div>
         <input id="city" type="text" placeholder="Enter your name here">
         <button id="button" onclick="getfivedays(),getWeather()">Search</button>
     </div>
     <!-- <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUxdTbfhIpD7h2Iu09VG4ZLfIAeIMsrcy0SQ&usqp=CAU" width="70%" height="100px"></div> -->
-</div>
 <div id="container">
 <div id="box1">
     <div id="cityname"></div>
+    <!-- <p>#87cdbe</p> -->
     <div id="temp"></div>
     <div id="all"></div>
-    <div id="fivedays">
-</div>
-</div>
-</div>
 </div>
 <div id="box2">
     <div class="mapouter">
         <div class="gmap_canvas">
         </iframe><a href="https://www.fridaynightfunkin.net/friday-night-funkin-mods-fnf-play-online/"></a>
     </div></div>
+</div>
+</div>
+</div>
+<div id="fivecont">
+    <div id="fivedays"></div>
+</div>
 </div>
 </body>
 </html>

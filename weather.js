@@ -32,7 +32,7 @@ async function getfivedays(){
         catch(err){
             console.log("err:",err);
        }
-};
+};      
 var arr=[
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvBityIZHfD7qLWbgLAeEnqptTIMNyIDPcZw&usqp=CAU",
     "https://thumbs.dreamstime.com/b/rain-storm-weather-icon-isolated-white-background-66246968.jpg",
@@ -50,12 +50,13 @@ function showfivedays(data2){
         date1.innerText=data2.list[i].dt_txt;
         let temp1=document.createElement("p");
         temp1.innerText=data2.list[i].main.temp;
+        temp1.style.color="red"
         // temp1.src=data2.list[i].weather[0].icon;
-        let cloud=document.createElement("img");
+        let cloud=document.createElement("p");
         cloud.style.width="50px"
         cloud.style.height="50px"
-        cloud.src=arr[count++];
-        console.log(arr[count]+"avvvv")
+        cloud.innerText=data2.list[i].weather[0].icon;
+        console.log(data2.list[i].weather[0].icon+"avvvv")
         console.log(temp1+"koooo")
         let div1=document.createElement("div");
         div1.append(date1,cloud,temp1);
