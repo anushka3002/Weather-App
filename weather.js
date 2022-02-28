@@ -1,7 +1,8 @@
 var gmap_canvas=document.querySelector(".gmap_canvas")
      var cityname=document.querySelector("#cityname") 
      var temprt=document.querySelector("#temp") 
-     var all=document.querySelector("#all") 
+     var all=document.querySelector("#all")
+     var body=document.querySelector("body") 
     async function getWeather(){
         gmap_canvas.innerHTML=""
         cityname.innerHTML=""
@@ -48,14 +49,16 @@ function showfivedays(data2){
         
         let date1=document.createElement("p");
         date1.innerText="Date: "+data2.list[i].dt_txt;
+        date1.style.color="rgba(224, 224, 226, 0.384)"
         let desc= document.createElement("p")
         desc.innerText=data2.list[i].weather[0].description;
         desc.setAttribute("id","descloud")
         let temp1=document.createElement("p");
         temp1.innerText="Temp: "+data2.list[i].main.temp;
-        temp1.style.color="red"
+        temp1.style.color="rgba(224, 224, 226, 0.384)"
         temp1.style.marginBottom="18%"
         temp1.style.marginTop="-10px";
+        // temp1.style.color="rgba(224, 224, 226, 0.384);"
         console.log(temp1+"koooo")
         let div1=document.createElement("div");
         div1.setAttribute("id","div1")
@@ -76,17 +79,25 @@ function showWeather(weather){
     name.innerText=weather.name;
     let temp=document.createElement("h2");
     temp.innerText=`${weather.main.temp}°`;
+    if(weather.main.temp<20){
+        body.style.repeat="no repeat"
+        body.style.backgroundImage="url(https://i.pinimg.com/564x/f1/27/64/f12764f32e57f66dcff6865f4bb7b45b.jpg)"
+    }
+    else{
+        temp.style.color="yellow"
+        body.style.backgroundColor="rgb(26, 26, 83)"
+    }
     let pressure=document.createElement("p"); 
-    pressure.innerText=`Pressure: ${weather.main.pressure}`;
+    pressure.innerText=`Pressure: ${weather.main.pressure}°`;
     pressure.setAttribute("id","pressurejs")
     let humidity=document.createElement("p");
-    humidity.innerText=`Humidity: ${weather.main.humidity}`;
+    humidity.innerText=`Humidity: ${weather.main.humidity}°`;
     humidity.setAttribute("id","humidityjs")
     let maxtemp=document.createElement("p")
-    maxtemp.innerText=`Max: ${weather.main.temp_max}`;
+    maxtemp.innerText=`Max: ${weather.main.temp_max}°`;
     maxtemp.setAttribute("id","maxjs")
     let mintemp=document.createElement("p")
-    mintemp.innerText=`Min: ${weather.main.temp_min}`;
+    mintemp.innerText=`Min: ${weather.main.temp_min}°`;
     mintemp.setAttribute("id","minjs")
     
     cityname.append(name)

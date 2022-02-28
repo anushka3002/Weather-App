@@ -1,4 +1,4 @@
-body {
+#body {
     height:550px;
     /* border:2px solid red; */
     animation: fadeInAnimation ease 3s;
@@ -70,6 +70,13 @@ body {
     height:30%;
     /* display: flex; */
     text-align: center;
+    /* color:rgba(224, 224, 226, 0.384); */
+}
+#cityname{
+    color:rgba(224, 224, 226, 0.384);
+}
+#temp{
+    color:rgba(224, 224, 226, 0.384);
 }
 #all{
     text-align: center;
@@ -128,6 +135,7 @@ body {
     background-color: rgba(224, 224, 226, 0.384);
     border-radius: 25px;
     padding:3px;
+    /* color:rgba(224, 224, 226, 0.384); */
 }
 #div1{
     display: flex;
