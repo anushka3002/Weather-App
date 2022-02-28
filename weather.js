@@ -45,7 +45,7 @@ var arr=[
 function showfivedays(data2){
     document.querySelector("#fivedays").innerHTML=""
     var count=0;
-    for(var i=0;i<=40;i=i+8){
+    for(var i=8;i<=84;i=i+8){
         
         let date1=document.createElement("p");
         date1.innerText="Date: "+data2.list[i].dt_txt;
@@ -79,15 +79,15 @@ function showWeather(weather){
     name.innerText=weather.name;
     let temp=document.createElement("h2");
     temp.innerText=`${weather.main.temp}°`;
-    if(weather.main.temp<20){
-        // body.style.repeat="no repeat"
-        body.style.backgroundImage="url(http://ayay.co.uk/backgrounds/weather/lightning/blue-lightning-clouds.jpg)"
-    }
-    else{
-        temp.style.color="yellow"
-        body.style.color="black"
-        body.style.backgroundImage="url(https://media.istockphoto.com/photos/desert-sand-sunset-picture-id184595458?k=20&m=184595458&s=612x612&w=0&h=dj5qLOgek_vjBv6sow115fE_ES73C4uayKt7wOMDmvU=)"
-    }
+    // if(weather.main.temp<20){
+    //     // body.style.repeat="no repeat"
+    //     body.style.backgroundImage="url(http://ayay.co.uk/backgrounds/weather/lightning/blue-lightning-clouds.jpg)"
+    // }
+    // else{
+    //     temp.style.color="yellow"
+    //     body.style.color="black"
+    //     body.style.backgroundImage="url(https://media.istockphoto.com/photos/desert-sand-sunset-picture-id184595458?k=20&m=184595458&s=612x612&w=0&h=dj5qLOgek_vjBv6sow115fE_ES73C4uayKt7wOMDmvU=)"
+    // }
     let pressure=document.createElement("p"); 
     pressure.innerText=`Pressure: ${weather.main.pressure}°`;
     pressure.setAttribute("id","pressurejs")
