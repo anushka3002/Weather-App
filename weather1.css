@@ -4,9 +4,10 @@ body {
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    background-size: 100% 100%;
+    /* background-size: 100% 100%; */
     /* background-color:rgb(104, 150, 235); */
-    background-image: url("https://wallpapercave.com/wp/xpbJv4U.jpg");
+    /* background-image: url("https://wallpapercave.com/wp/xpbJv4U.jpg"); */
+    background-color: rgb(26, 26, 83);
 }
 
 @keyframes fadeInAnimation {
@@ -133,17 +134,17 @@ body {
     justify-content: space-between;
 }
 #cloud{
-    border:1px solid red;
+    /* border:1px solid red; */
     width:25%;
     display: block;
 }
 #fivedays{
-    border:1px solid blue;
+    /* border:1px solid blue; */
     margin-left:9%;
     width:70%;
 }
 #bigcont{
-    border:2px solid rgb(221, 38, 69);
+    /* border:2px solid rgb(221, 38, 69); */
     width:100%;
     height:100%;
     display: flex;
@@ -151,7 +152,7 @@ body {
 #left{
     width:50%;
     height:100%;
-    border:3px solid black;
+    /* border:3px solid black; */
 }
 #all{
     display: flex;
