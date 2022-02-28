@@ -1,10 +1,11 @@
 #body {
-    height:550px;
+    height:558px;
     /* border:2px solid red; */
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    /* background-size: 100% 100%; */
+    background-size: 110% 110%;
+    background-repeat: no-repeat;
     /* background-color:rgb(104, 150, 235); */
     /* background-image: url("https://wallpapercave.com/wp/xpbJv4U.jpg"); */
     background-color: rgb(26, 26, 83);
@@ -72,12 +73,12 @@
     text-align: center;
     /* color:rgba(224, 224, 226, 0.384); */
 }
-#cityname{
+/* #cityname{
     color:rgba(224, 224, 226, 0.384);
 }
 #temp{
-    color:rgba(224, 224, 226, 0.384);
-}
+    color:rgba(224, 224, 226, 0.384); */
+/* } */
 #all{
     text-align: center;
     margin:auto;
@@ -98,7 +99,7 @@
 #box2{
     /* border:5px solid green; */
     width:100%;
-    height:70%;
+    height:65%;
 
 }
 .mapouter{
@@ -127,7 +128,7 @@
     margin-left: 13%;
     margin-right:3%;
     border-radius:7px;
-    /* background-color: rgba(184, 184, 243, 0.377); */
+    background-color: rgba(184, 184, 243, 0.377);
     border-radius: 25px;
     padding:3px;
 }
