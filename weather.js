@@ -47,20 +47,22 @@ function showfivedays(data2){
     for(var i=0;i<=40;i=i+8){
         
         let date1=document.createElement("p");
-        date1.innerText=data2.list[i].dt_txt;
+        date1.innerText="Date: "+data2.list[i].dt_txt;
+        let desc= document.createElement("p")
+        desc.innerText=data2.list[i].weather[0].description;
+        desc.setAttribute("id","descloud")
         let temp1=document.createElement("p");
-        temp1.innerText=data2.list[i].main.temp;
+        temp1.innerText="Temp: "+data2.list[i].main.temp;
         temp1.style.color="red"
-        // temp1.src=data2.list[i].weather[0].icon;
-        let cloud=document.createElement("p");
-        cloud.style.width="50px"
-        cloud.style.height="50px"
-        cloud.innerText=data2.list[i].weather[0].icon;
-        console.log(data2.list[i].weather[0].icon+"avvvv")
+        temp1.style.marginBottom="18%"
+        temp1.style.marginTop="-10px";
         console.log(temp1+"koooo")
         let div1=document.createElement("div");
-        div1.append(date1,cloud,temp1);
-        document.querySelector("#fivedays").append(div1);
+        div1.setAttribute("id","div1")
+        let div2=document.createElement("div")
+        div1.append(date1,desc)
+        div2.append(temp1);
+        document.querySelector("#fivedays").append(div1,div2);
         
 
     }
@@ -76,13 +78,17 @@ function showWeather(weather){
     temp.innerText=`${weather.main.temp}°`;
     let pressure=document.createElement("p"); 
     pressure.innerText=`Pressure: ${weather.main.pressure}`;
+    pressure.setAttribute("id","pressurejs")
     let humidity=document.createElement("p");
     humidity.innerText=`Humidity: ${weather.main.humidity}`;
+    humidity.setAttribute("id","humidityjs")
     let maxtemp=document.createElement("p")
     maxtemp.innerText=`Max: ${weather.main.temp_max}`;
+    maxtemp.setAttribute("id","maxjs")
     let mintemp=document.createElement("p")
     mintemp.innerText=`Min: ${weather.main.temp_min}`;
-
+    mintemp.setAttribute("id","minjs")
+    
     cityname.append(name)
     temprt.append(temp)
     all.append(humidity,pressure,maxtemp,mintemp) 
