@@ -1,14 +1,14 @@
 #body {
-    height:558px;
+    height:559px;
     /* border:2px solid red; */
     animation: fadeInAnimation ease 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
-    background-size: 110% 110%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     /* background-color:rgb(104, 150, 235); */
-    /* background-image: url("https://wallpapercave.com/wp/xpbJv4U.jpg"); */
-    background-color: rgb(26, 26, 83);
+    background-image: url("https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL3doeS1pcy1za3ktYmx1ZS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjgyOH19fQ==");
+    /* background-color: rgb(68, 68, 153); */
 }
 
 @keyframes fadeInAnimation {
@@ -19,6 +19,14 @@
         opacity: 1;
     }
 }
+#colors{
+    display: block;
+}
+
+/* #cityname,#temp{
+    color:rgb(170, 169, 169);
+} */
+
 
 .cont{
     border:1px solid rgb(151, 148, 148);
@@ -61,7 +69,7 @@
 }
 #container{
     /* display: flex; */
-    /* border:2px solid blue; */
+    border:2px solid transparent;
     width:100%;
     height:80%;
 }
@@ -99,7 +107,7 @@
 #box2{
     /* border:5px solid green; */
     width:100%;
-    height:65%;
+    height:68%;
 
 }
 .mapouter{
@@ -130,7 +138,7 @@
     border-radius:7px;
     background-color: rgba(184, 184, 243, 0.377);
     border-radius: 25px;
-    padding:3px;
+    padding:10px;
 }
 #descloud{
     background-color: rgba(224, 224, 226, 0.384);
@@ -169,3 +177,56 @@
 /* #fivedays{
     display: flex;
 } */
+
+#red{
+    background-color: red;
+}
+.multiplecolors{
+    border-radius:50%;
+    width:30px;
+    height:30px;
+    border:1px solid transparent;
+    margin-bottom: 10px;
+}
+#green{
+    background-color: rgb(34, 192, 153);
+}
+#yellow{
+    background-color: yellow;
+}
+#pink{
+    background-color: pink;
+}
+#orange{
+    background-color: orange;
+}
+#purple{
+    background-color: purple;
+}
+.gmap_canvas{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("https://770d588580735cbc2ead-97e9fdd521463d2c3a7200b33fd65345.ssl.cf2.rackcdn.com/uploaded/w/0e11130809_1604008349_world-map.gif")
+}
+#sample{
+    margin-bottom: 36%;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 400px) {
+    #bigcont{
+        display: block;
+    }
+    #left{
+        width:100%;
+    }
+    #fivecont{
+        /* border:2px solid black; */
+        width:90%;
+        margin-left: 1%;
+    }
+    
+
+}
+
+
+

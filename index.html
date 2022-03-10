@@ -19,9 +19,9 @@
     <!-- <div><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUxdTbfhIpD7h2Iu09VG4ZLfIAeIMsrcy0SQ&usqp=CAU" width="70%" height="100px"></div> -->
 <div id="container">
 <div id="box1">
-    <div id="cityname"></div>
+    <div id="cityname"><h2>City Name</h2></div>
     <!-- <p>#87cdbe</p> -->
-    <div id="temp"></div>
+    <div id="temp"><h2>Temperature</h2></div>
     <div id="all"></div>
 </div>
 <div id="box2">
@@ -41,17 +41,22 @@
     <img src="https://pixy.org/download/5754965/" width="100%" height="20%">
 </div>
     <div id="fivedays">
+        <p id="sample">Get the upcoming weather data</h3>
+        <p id="sample">Get the upcoming weather data</p>
+        <p id="sample">Get the upcoming weather data</p>
+        <p id="sample">Get the upcoming weather data</p>
+        <p id="sample">Get the upcoming weather data</p>
     </div>
+</div>
+<div id="colors">
+    <div><button class="multiplecolors" id="red"></button></div>
+    <div><button class="multiplecolors" id="green"></button></div>
+    <div><button class="multiplecolors" id="yellow"></button></div>
+    <div><button class="multiplecolors" id="pink"></button></div>
+    <div><button class="multiplecolors" id="orange"></button></div>
+    <div><button class="multiplecolors" id="purple"></button></div>
 </div>
 </div>
 </body>
 </html>
-<script>
-    document.querySelector("#form").addEventListener("submit",function(elem){
-        elem.preventDefault();
-        var name=document.querySelector("#name").value;
-        localStorage.setItem("weather_name",JSON.stringify(name))
-        window.location.href="weather.html";
-    })
-</script>
 <script src="weather.js"></script> 
