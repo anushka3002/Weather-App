@@ -109,6 +109,7 @@ function showWeather(weather){
     iframe.style.frameborder="0";
     iframe.style.width="100%";
     iframe.style.height="100%";
+    // iframe.style.border="5px solid black";
     iframe.src=`https://maps.google.com/maps?q=${cityname2}&t=&z=13&ie=UTF8&iwloc=&output=embed`
 
     gmap_canvas.append(iframe)
